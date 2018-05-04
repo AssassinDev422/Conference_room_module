@@ -1,0 +1,9 @@
+{
+    "worker_count": 2,
+    "private_key": "/certificates/privatekey.pem",
+    "certificate": "/certificates/certificate.pem",
+    "namespace": "",
+    "upload_path": "/public/images/uploads/",
+    "ssl_port" : 843,
+ 	"default_port" : 3000
+}

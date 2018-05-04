@@ -1,0 +1,27 @@
+{
+  "name": "whiteboard-module",
+  "version": "0.0.1",
+  "author": "duminda@thinkcube.com",
+  "description": "whiteboard module for virtual classroom",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "jade": "0.31.2",
+    "socket.io": "0.9.16",
+    "redis": "0.8.3",
+    "cluster": "0.7.7",
+    "socket.io-clusterhub": "0.2.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-shell": "~0.6.4",
+    "grunt-jsbeautifier": "~0.2.7",
+    "grunt-contrib-jshint": "~0.10.0"
+  }
+}
+

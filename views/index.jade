@@ -1,0 +1,124 @@
+extends layout
+
+block content
+ .container
+  .row.show-grid
+    div(id="canvascolours")
+      div(data-colour='black', style='background-color: black;')
+      div(data-colour='red', style='background-color: red;')
+      div(data-colour='orange', style='background-color: orange;')
+      div(data-colour='yellow', style='background-color: yellow;')
+      div(data-colour='green', style='background-color: green;')
+      div(data-colour='blue', style='background-color: blue;')
+      div(data-colour='indigo', style='background-color: rgb(75, 0, 130);')
+      div(data-colour='violet', style='background-color: rgb(238, 130, 238);')
+      div(data-colour='white', style='background-color: white;')
+    
+    div(id="wb1")
+      span(id="fsstatus")
+    div(id="wb2",style="display:none;")
+      span(id="fsstatus")
+    div(id="wb3",style="display:none;")
+      span(id="fsstatus")
+    div(id="wb4",style="display:none;")
+      span(id="fsstatus")
+
+    div(id="ico")
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="gotoFirst()",id="frst")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="gotoPrv()",id="prv")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="gotoNext()",id="fwd")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="gotoLast()",id="lst")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="drawLine()",id="line")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="drawRect()",id="rect")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="drawEllipse()",id="ecl")
+ 
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="drawText()",id="text")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="drawPath()",id="drw")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="clearPaper()",id="clr")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="fullScreen()",id="fsc")
+      
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="raiseHand()",id="raise") 
+      
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="giveWhiteboardAccess()",id="allow")
+      
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="getWhiteboardAccess()",id="lock")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="erase()",id="erase")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="undo()",id="undo")
+
+     div(id="ico-btn")
+      button(type="submit", value="", onclick="redo()",id="redo")
+
+     div(id="sldno",class="up-no")
+     div(id="sldno") /
+     div(id="orgCount")=slide_count_a
+
+    button(type="submit", value="", onclick="loadWhiteboard('1')",id="wbl1") 1
+    br
+    button(type="submit", value="", onclick="loadWhiteboard('2')",id="wbl2") 2
+    br
+    button(type="submit", value="", onclick="loadWhiteboard('3')",id="wbl3") 3
+    br
+    button(type="submit", value="", onclick="loadWhiteboard('4')",id="wbl4") 4
+    br
+    br
+    button(type="submit", value="", onclick="switchToPresentation('1')",id="switch1")  1
+    br
+    button(type="submit", value="", onclick="switchToPresentation('2')",id="switch2")  2
+    br
+    button(type="submit", value="", onclick="switchToPresentation('3')",id="switch3")  3
+    br
+    button(type="submit", value="", onclick="switchToPresentation('4')",id="switch4")  4
+    br
+    br
+    button(type="submit", value="",id="uploader") 
+    br
+    select(id="thickness")
+       option 1
+       option 2
+       option 3
+
+ div(id="preload_imgs")
+ div(style="display:none",id="sldcnt1")=slide_count_1
+ div(style="display:none",id="sldcnt2")=slide_count_2
+ div(style="display:none",id="sldcnt3")=slide_count_3
+ div(style="display:none",id="sldcnt4")=slide_count_4
+
+ div(id="cmd")
+  span
+  div(id="cursor")
+  input(type="text",id="txtinput")
+  
+ script(src='/javascripts/common-js/jquery-1.9.1.min.js')
+ script(src='/javascripts/common-js/bigscreen.min.js')
+ script(src='/javascripts/common-js/common-fs.js')
+ script(src='/socket.io/socket.io.js')
+ script(src='/javascripts/common-js/raphael.js')
+ script(src='/javascripts/common-js/upclick.js')
+ script(src='/javascripts/build/vclass.min.js')
